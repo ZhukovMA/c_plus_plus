@@ -1,0 +1,46 @@
+
+6_01 Launch
+
+>>> g++-15 -std=c++20 -Wall -Wextra -pedantic -c rational.cpp -o rational.o
+real 0,34
+user 0,19
+sys 0,06
+
+>>> g++-15 -std=c++20 -Wall -Wextra -pedantic -c main.cpp -o main.o
+real 0,30
+user 0,24
+sys 0,04
+
+>>> g++-15 rational.o main.o -o header_app
+real 0,04
+user 0,06
+sys 0,02
+
+Size of rational.o: 5720 bytes
+Size of main.o: 25424 bytes
+Size of header_app: 64920 bytes
+
+execute header_app
+2/4 = 1/2
+-6/-8 = 3/4
+7/-21 = -1/3
+1/2 + 3/4 = 5/4
+3/5 * 10/9 = 2/3
+zero division.
+devision incorrect.
+
+
+>>> bash -lc cd '/Users/maximzhukov/Documents/ФРКТ/cpp/6_03/6_01' && 'g++-15' -std=c++20 -Wall -Wextra -pedantic -c rational.cpp -o rational.o && 'g++-15' -std=c++20 -Wall -Wextra -pedantic -c main.cpp -o main.o && 'g++-15' rational.o main.o -o header_app
+real 0,58
+user 0,50
+sys 0,10
+
+6_02 Launch
+
+
+>>> bash -lc cd '/Users/maximzhukov/Documents/ФРКТ/cpp/6_03/6_02' && ffor h in array cassert cmath compare ios iosfwd iostream istream limits numeric ostream sstream stdexcept tuple utility; do 'g++-15' -std=c++20 -fmodules-ts -x c++-system-header "$h" >/dev/null 2>&1; done
+bash: -c: line 0: syntax error near unexpected token `do'
+bash: -c: line 0: `cd '/Users/maximzhukov/Documents/ФРКТ/cpp/6_03/6_02' && ffor h in array cassert cmath compare ios iosfwd iostream istream limits numeric ostream sstream stdexcept tuple utility; do 'g++-15' -std=c++20 -fmodules-ts -x c++-system-header "$h" >/dev/null 2>&1; done'
+real 0,00
+user 0,00
+sys 0,00

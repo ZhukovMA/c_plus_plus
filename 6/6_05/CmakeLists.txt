@@ -1,0 +1,19 @@
+cmake_minimum_required(VERSION 3.16)
+
+project(RuntimeDllImportExample LANGUAGES CXX)
+
+set(CMAKE_CXX_STANDARD 17)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
+set(CMAKE_CXX_EXTENSIONS OFF)
+
+find_package(Boost REQUIRED COMPONENTS dll)
+
+set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin)
+set(CMAKE_LIBRARY_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin)
+set(CMAKE_ARCHIVE_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/lib)
+
+add_library(test_v1 SHARED src/test_v1.cpp)
+add_library(test_v2 SHARED src/test_v2.cpp)
+
+add_executable(main_app src/main.cpp)
+target_link_libraries(main_app PRIVATE Boost::dll)

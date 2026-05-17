@@ -36,7 +36,7 @@ if (NOT rapidjson_POPULATED)
     FetchContent_Populate(rapidjson)
 endif()
 
-add_executable(json_number_benchmarks main.cpp)
+add_executable(json_number_benchmarks 13_5.cpp)
 
 target_link_libraries(
     json_number_benchmarks
